@@ -1,0 +1,22 @@
+#! /bin/sh
+
+sxhkd &
+
+bspc monitor HDMI-0 -d 1 2 3 4 5
+bspc monitor DVI-D-0 -d 6 7 8 9 0
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Emacs state=tiled
+
+~/.config/polybar/launch.sh
+picom
+feh --bg-fill /home/q/Pictures/animewal1.jpg
+setxkbmap -option 'grp:alt_shift_toggle' -layout us,ru 
+export _JAVA_AWT_WM_NONREPARENTING=1
+wmname LG3D
